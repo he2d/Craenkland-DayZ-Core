@@ -1,0 +1,392 @@
+/*%FSM<COMPILE "C:\Program Files (x86)\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, DayZ Player Loops">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"init",0,250,-75.000000,-350.000000,25.000000,-300.000000,0.000000,"init"};
+item1[] = {"isServer",4,218,50.000000,-350.000000,150.000000,-300.000000,0.000000,"isServer"};
+item2[] = {"___sec",4,218,-175.000000,0.000000,-75.000000,50.000000,3.000000,"5 sec"};
+item3[] = {"___Sec_1",4,218,50.000000,-50.000000,150.000000,0.000000,1.000000,"1 Sec"};
+item4[] = {"Loading",2,250,-75.000000,-50.000000,25.000000,0.000000,0.000000,"Loading"};
+item5[] = {"Client",4,218,-75.000000,-275.000000,25.000000,-225.000000,0.000000,"Client"};
+item6[] = {"___Sec",4,218,-200.000000,-50.000000,-100.000000,0.000000,2.000000,"2 Sec"};
+item7[] = {"__5_sec",4,218,25.000000,0.000000,125.000000,50.000000,5.000000,"15 sec"};
+item8[] = {"__",2,250,250.000000,-50.000000,350.000000,0.000000,0.000000,"1"};
+item9[] = {"",7,210,396.000000,-104.000000,404.000000,-96.000000,0.000000,""};
+item10[] = {"Setup",2,250,-75.000000,-200.000000,25.000000,-150.000000,0.000000,"Setup"};
+item11[] = {"True_",8,218,-75.000000,-125.000000,25.000000,-75.000000,0.000000,"True" \n ""};
+item12[] = {"",7,210,396.000000,-29.000000,404.000000,-21.000000,0.000000,""};
+item13[] = {"",7,210,396.000000,21.000000,404.000000,29.000000,0.000000,""};
+item14[] = {"",7,4306,-429.000000,-104.000000,-421.000000,-96.000000,0.000000,""};
+item15[] = {"",7,210,-429.000000,21.000000,-421.000000,29.000000,0.000000,""};
+item16[] = {"__5",2,250,250.000000,0.000000,350.000000,50.000000,0.000000,"15"};
+item17[] = {"___1",2,250,-375.000000,0.000000,-275.000000,50.000000,0.000000,"5"};
+item18[] = {"End",1,250,225.000000,-350.000000,325.000000,-300.000000,0.000000,"End"};
+item19[] = {"___2",2,250,-375.000000,-50.000000,-275.000000,0.000000,0.000000,"2"};
+item20[] = {"",7,210,-429.000000,-29.000000,-421.000000,-21.000000,0.000000,""};
+item21[] = {"__0Sec",4,218,-125.000000,50.000000,-25.000000,100.000000,0.000000,"30Sec"};
+item22[] = {"__0",2,250,-375.000000,50.000000,-275.000000,100.000000,0.000000,"30"};
+item23[] = {"",7,210,-429.000000,71.000000,-421.000000,79.000000,0.000000,""};
+item24[] = {"",7,210,-29.000000,21.000000,-21.000000,29.000000,0.000000,""};
+item25[] = {"__5Sec",4,218,-25.000000,50.000000,75.000000,100.000000,0.000000,"45Sec"};
+item26[] = {"__5_1",2,250,250.000000,50.000000,350.000000,100.000000,0.000000,"45"};
+item27[] = {"",7,210,396.000000,71.000000,404.000000,79.000000,0.000000,""};
+link0[] = {0,1};
+link1[] = {0,5};
+link2[] = {1,18};
+link3[] = {2,17};
+link4[] = {3,8};
+link5[] = {4,2};
+link6[] = {4,3};
+link7[] = {4,6};
+link8[] = {4,7};
+link9[] = {4,24};
+link10[] = {5,10};
+link11[] = {6,19};
+link12[] = {7,16};
+link13[] = {8,12};
+link14[] = {9,11};
+link15[] = {10,11};
+link16[] = {11,4};
+link17[] = {12,9};
+link18[] = {13,12};
+link19[] = {14,11};
+link20[] = {15,20};
+link21[] = {16,13};
+link22[] = {17,15};
+link23[] = {19,20};
+link24[] = {20,14};
+link25[] = {21,22};
+link26[] = {22,23};
+link27[] = {23,15};
+link28[] = {24,21};
+link29[] = {24,25};
+link30[] = {25,26};
+link31[] = {26,27};
+link32[] = {27,13};
+globals[] = {25.000000,1,0,0,0,640,480,1,211,6316128,1,-506.701630,480.207428,307.995117,-355.463867,894,601,1};
+window[] = {2,-1,-1,-32000,-32000,912,132,1504,132,3,911};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "DayZ Player Loops";
+  class States
+  {
+    /*%FSM<STATE "init">*/
+    class init
+    {
+      name = "init";
+      init = /*%FSM<STATEINIT""">*/"diag_log (""Loops Running"");" \n
+       "" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Client">*/
+        class Client
+        {
+          priority = 0.000000;
+          to="Setup";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!isServer"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "isServer">*/
+        class isServer
+        {
+          priority = 0.000000;
+          to="End";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"isServer"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Loading">*/
+    class Loading
+    {
+      name = "Loading";
+      init = /*%FSM<STATEINIT""">*/"//diag_log (""Waiting"");" \n
+       "" \n
+       "" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "__5_sec">*/
+        class __5_sec
+        {
+          priority = 5.000000;
+          to="__5";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((diag_tickTime - _15Sec) > 15)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "___sec">*/
+        class ___sec
+        {
+          priority = 3.000000;
+          to="___1";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((diag_tickTime - _5Sec) > 5)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "___Sec">*/
+        class ___Sec
+        {
+          priority = 2.000000;
+          to="___2";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((diag_tickTime - _2Sec) > 2)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "___Sec_1">*/
+        class ___Sec_1
+        {
+          priority = 1.000000;
+          to="__";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((diag_tickTime - _1Sec) > 1)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "__5Sec">*/
+        class __5Sec
+        {
+          priority = 0.000000;
+          to="__5_1";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((diag_tickTime - _30Sec) > 30)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "__0Sec">*/
+        class __0Sec
+        {
+          priority = 0.000000;
+          to="__0";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((diag_tickTime - _30Sec) > 30)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "__">*/
+    class __
+    {
+      name = "__";
+      init = /*%FSM<STATEINIT""">*/"[] call player_zombieCheck;" \n
+       "" \n
+       "_1Sec = diag_tickTime;" \n
+       "" \n
+       "" \n
+       "//diag_log (""1 Sec"");" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "True_">*/
+        class True_
+        {
+          priority = 0.000000;
+          to="Loading";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Setup">*/
+    class Setup
+    {
+      name = "Setup";
+      init = /*%FSM<STATEINIT""">*/"_1Sec = diag_tickTime;" \n
+       "_15Sec = diag_tickTime;" \n
+       "_5Sec = diag_tickTime;" \n
+       "_2Sec = diag_tickTime;" \n
+       "_30Sec = diag_tickTime;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "True_">*/
+        class True_
+        {
+          priority = 0.000000;
+          to="Loading";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "__5">*/
+    class __5
+    {
+      name = "__5";
+      init = /*%FSM<STATEINIT""">*/"//Spawn check" \n
+       "[""both""] spawn player_spawnCheck;" \n
+       "" \n
+       "//Monitor" \n
+       "_survivors = playersNumber west;" \n
+       "diag_log format[ ""Survivors:%1, FPS:%2, FPSMin:%3"", _survivors, round diag_fps, round diag_fpsmin];" \n
+       "" \n
+       "" \n
+       "//Timer" \n
+       "_15Sec = diag_tickTime;" \n
+       "" \n
+       "" \n
+       "//diag_log (""15 Sec"");"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "True_">*/
+        class True_
+        {
+          priority = 0.000000;
+          to="Loading";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "___1">*/
+    class ___1
+    {
+      name = "___1";
+      init = /*%FSM<STATEINIT""">*/"//Check if new day" \n
+       "_day = round(360 * (dateToNumber date));" \n
+       "if(dayz_currentDay != _day) then {" \n
+       "	dayz_sunRise = call world_sunRise;" \n
+       "	dayz_currentDay = _day;" \n
+       "};" \n
+       "" \n
+       "_5Sec = diag_tickTime;" \n
+       "" \n
+       "" \n
+       "//diag_log (""5 Sec"");"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "True_">*/
+        class True_
+        {
+          priority = 0.000000;
+          to="Loading";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "End">*/
+    class End
+    {
+      name = "End";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "___2">*/
+    class ___2
+    {
+      name = "___2";
+      init = /*%FSM<STATEINIT""">*/"[false] call stream_locationCheck;" \n
+       "" \n
+       "_2Sec = diag_tickTime;" \n
+       "" \n
+       "" \n
+       "//diag_log (""2 Sec"");"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "True_">*/
+        class True_
+        {
+          priority = 0.000000;
+          to="Loading";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "__0">*/
+    class __0
+    {
+      name = "__0";
+      init = /*%FSM<STATEINIT""">*/"//animal check" \n
+       "[] call player_animalCheck;" \n
+       "" \n
+       "//player bubble" \n
+       "[] call player_Bubble;" \n
+       "" \n
+       "" \n
+       "//Timer" \n
+       "_30Sec = diag_tickTime;" \n
+       "" \n
+       "//diag_log (""30 Sec"");"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "True_">*/
+        class True_
+        {
+          priority = 0.000000;
+          to="Loading";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "__5_1">*/
+    class __5_1
+    {
+      name = "__5_1";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "True_">*/
+        class True_
+        {
+          priority = 0.000000;
+          to="Loading";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="init";
+  finalStates[] =
+  {
+    "End",
+  };
+};
+/*%FSM</COMPILE>*/
