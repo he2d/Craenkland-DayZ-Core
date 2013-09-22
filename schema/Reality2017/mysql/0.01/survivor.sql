@@ -1,1 +1,0 @@
-ALTER TABLE survivor ADD last_slept int(3) unsigned NOT NULL DEFAULT '0';

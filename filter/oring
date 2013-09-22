@@ -1,4 +1,0 @@
-{
-"setFuel": "{ (_this select 1) call local_setFuel; }] call registe\\\"\\\"",
-"\\\"play\\\"": "!=\\\"_this spawn server_playerHit;\\\""
-}
